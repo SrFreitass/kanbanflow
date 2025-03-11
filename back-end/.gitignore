@@ -7,10 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-./front-end/node_modules
-./back-end-end/node_modules
-./back-end/.env
-./front-end/.env
+node_modules
+.env
 
 dist
 dist-ssr
