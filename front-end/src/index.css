@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+/* Agora vêm os estilos personalizados */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,8 +18,8 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: #F15637;
+  text-decoration: underline;
 }
 a:hover {
   color: #535bf2;
@@ -42,7 +45,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #F15637;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -60,9 +63,9 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #F15637;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #F15637;
   }
 }
