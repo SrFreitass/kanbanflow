@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 
-export function LoginView() {
+
+export function SignUpView(){
     return (
         <div className="flex flex-col gap-6">
             <div className="flex flex-col w-90 gap-2">
@@ -17,13 +18,14 @@ export function LoginView() {
             </div>
 
             <div className="flex flex-col gap-5">
+                <Input label="Nome" placeholder="Digite seu nome completo" />
                 <Input label="Email" placeholder="Digite seu e-mail"/>
                 <Input label="Senha" placeholder="Digite sua senha"/>
             </div>
             <div>
                 <Button size="lg" className="w-full">Entrar</Button>
-                <p className="text-start mt-2">Não tem uma conta?
-                    <Link to="/cadastro" className="ml-2">Criar uma conta</Link>
+                <p className="text-start mt-2">Já tem uma conta?
+                    <Link to="/cadastro" className="ml-2">Entrar</Link>
                 </p>
             </div>
         </div>
