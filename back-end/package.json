@@ -10,9 +10,18 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "fastify": "^5.2.1"
+    "@prisma/client": "^6.5.0",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.14.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/node": "^22.13.9"
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/mysql": "^2.15.26",
+    "@types/node": "^22.13.9",
+    "@types/pg": "^8.11.11",
+    "prisma": "^6.5.0"
   }
 }
