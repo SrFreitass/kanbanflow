@@ -3,3 +3,5 @@ interface RefreshTokenModel {
     user_id: string;
     token: string;
 }
+
+export { RefreshTokenModel };
