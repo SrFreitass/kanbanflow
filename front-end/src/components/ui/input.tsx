@@ -14,7 +14,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     {
       className,
       type,
-
       iconLeft,
       iconRight,
       label,
