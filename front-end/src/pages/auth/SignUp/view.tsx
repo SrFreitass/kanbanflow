@@ -18,14 +18,14 @@ export function SignUpView(){
             </div>
 
             <div className="flex flex-col gap-5">
-                <Input label="Nome" placeholder="Digite seu nome completo" />
+                <Input label="Nome" placeholder="Digite seu nome completo" className="flex"/>
                 <Input label="Email" placeholder="Digite seu e-mail"/>
                 <Input label="Senha" placeholder="Digite sua senha"/>
             </div>
             <div>
-                <Button size="lg" className="w-full">Entrar</Button>
+                <Button size="lg" className="w-full">Confirmar</Button>
                 <p className="text-start mt-2">Já tem uma conta?
-                    <Link to="/cadastro" className="ml-2">Entrar</Link>
+                    <Link to="/entrar" className="ml-2">Entrar</Link>
                 </p>
             </div>
         </div>
