@@ -21,7 +21,7 @@ export function LoginView() {
                 <Input label="Senha" placeholder="Digite sua senha"/>
             </div>
             <div>
-                <Button size="lg" className="w-full">Entrar</Button>
+                <Button size="lg" className="w-full"> <Link to="/board" >Entrar</Link>  </Button>
                 <p className="text-start mt-2">Não tem uma conta?
                     <Link to="/cadastro" className="ml-2">Criar uma conta</Link>
                 </p>
