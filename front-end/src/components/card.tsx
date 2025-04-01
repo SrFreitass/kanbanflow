@@ -24,7 +24,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         return  (
                 <div
                     ref={ref}
-                    className={cn('flex flex-col gap-1 bg-white p-4 rounded-2xl w-72 drop-shadow-sm',className)}
+                    className={cn('flex flex-col gap-1 bg-white p-4 rounded-[8px] w-72 drop-shadow-sm',className)}
                 >
                 <img className={cn('size-6 rounded-full',imageClassName)}
                     src={imageSrc}
