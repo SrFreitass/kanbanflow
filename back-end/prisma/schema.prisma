@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model categories {
+  id    String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name  String  @db.VarChar(20)
+  tasks tasks[]
+}
+
+model comments {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id     String?   @db.Uuid
+  content     String
+  created_at  DateTime? @default(now()) @db.Timestamp(6)
+  modified_at DateTime? @default(now()) @db.Timestamp(6)
+  users       users?    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  tasks       tasks[]
+}
+
+model members {
+  id         String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id    String?       @db.Uuid
+  project_id String?       @db.Uuid
+  type       members_type? @default(member)
+  projects   projects?     @relation(fields: [project_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users      users?        @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  tasks      tasks[]
+}
+
+model projects {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String    @db.VarChar(80)
+  description String?   @db.VarChar(255)
+  team_id     String?   @db.Uuid
+  amount      Int?
+  created_at  DateTime? @default(now()) @db.Timestamp(6)
+  members     members[]
+  teams       teams?    @relation(fields: [team_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model teams {
+  id          String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String     @db.VarChar(40)
+  description String?    @db.VarChar(255)
+  created_at  DateTime?  @default(now()) @db.Timestamp(6)
+  projects    projects[]
+}
+
+model users {
+  id            String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name          String          @db.VarChar(80)
+  email         String          @unique @db.VarChar(255)
+  password      String          @db.VarChar(100)
+  permission    permission_type @default(user)
+  comments      comments[]
+  members       members[]
+  refresh_token refresh_token?
+}
+
+model tasks {
+  id          String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String         @db.VarChar(80)
+  description String?        @db.VarChar(255)
+  category_id String?        @db.Uuid
+  assigned_to String?        @db.Uuid
+  status      status_type?   @default(planned)
+  deadline    DateTime?      @db.Date
+  comment_id  String?        @db.Uuid
+  priority    priority_type? @default(normal)
+  members     members?       @relation(fields: [assigned_to], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_assigned_to")
+  categories  categories?    @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_category_id")
+  comments    comments?      @relation(fields: [comment_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_comment_id")
+}
+
+model refresh_token {
+  id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id String? @unique @db.Uuid
+  token   String
+  users   users   @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_id")
+}
+
+enum members_type {
+  member
+  maneger
+}
+
+enum permission_type {
+  admin
+  user
+}
+
+enum priority_enum {
+  low
+  normal
+  high
+  urgent
+}
+
+enum role_enum {
+  member
+  manager
+}
+
+enum status_enum {
+  planned
+  in_progress
+  testing
+  completed
+}
+
+enum status_type {
+  planned
+  normal
+  high
+  urgent
+}
+
+enum priority_type {
+  low
+  normal
+  high
+  urgent
+}
