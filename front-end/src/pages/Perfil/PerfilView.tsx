@@ -5,6 +5,7 @@ import {Sidebar} from '../../components/sidebar';
 export function BoardView() {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
+  
 	
 	return (
 		<div className="flex h-screen w-screen border-blue-100 gap-8 border-8">
