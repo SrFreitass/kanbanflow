@@ -1,8 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import { useSignUpModel } from "./SignUpModel";
 
-export function SignUpView(){
+export function SignUpView() {
+    const { form, isLoading, onSubmit } = useSignUpModel()
+
+    const { register, handleSubmit, setValue } = form
+
     return (
         <div className="flex flex-col gap-6">
             <div className="flex flex-col w-96 gap-3">
@@ -16,17 +21,18 @@ export function SignUpView(){
                 <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu dictum mauris.</p>
             </div>
 
-            <div className="flex flex-col gap-5">
-                <Input label="Nome" placeholder="Digite seu nome completo"/>
-                <Input label="Email" placeholder="Digite seu e-mail" type="email"/>
-                <Input label="Senha" placeholder="Digite sua senha" type="password"/>
-            </div>
-            <div>
-                <Button size="lg" className="w-full">Confirmar</Button>
-                <p className="text-start mt-2">Já tem uma conta?
-                    <Link to="/entrar" className="ml-2">Entrar</Link>
-                </p>
-            </div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="flex flex-col gap-5">
+                    <Input label="Nome" placeholder="Digite seu nome completo" {...register('name')} />
+                    <Input label="Email" placeholder="Digite seu e-mail" type="email" {...register('email')} />
+                    <Input label="Senha" placeholder="Digite sua senha" type="password" {...register('password')} />
+                    <Button size="lg" className="w-full" type="submit">Confirmar</Button>
+                </div>
+            </form>
+
+            <p className="text-start mt-2">Já tem uma conta?
+                <Link to="/entrar" className="ml-2">Entrar</Link>
+            </p>
         </div>
     )
 }
