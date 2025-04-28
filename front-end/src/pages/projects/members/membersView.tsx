@@ -1,6 +1,8 @@
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
 
-export function MembersView({ params }) {
-    const projectId = params.id
+export function MembersView() {
+    // const projectId = params.id
 
     return (
         <div className="flex h-screen bg-gray-50">
@@ -10,23 +12,13 @@ export function MembersView({ params }) {
                         <h1 className="text-2xl font-bold">Membros do Projeto</h1>
                         <p className="text-gray-500">Gerencie os membros e suas permissões</p>
                     </div>
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-md flex items-center gap-2 hover:bg-blue-700">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
+                    <Button 
+                    className=" text-white rounded-md flex items-center gap-2 hover:bg-blue-700"
+                    size="lg"
+                    >
+                        <Plus className="w-4 h-4" />
                         Adicionar Membro
-                    </button>
+                    </Button>
                 </div>
 
                 <div className="bg-white rounded-lg shadow-sm border overflow-hidden">
@@ -167,10 +159,10 @@ export function MembersView({ params }) {
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <span
                                             className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${member.role === "Gerente"
-                                                    ? "bg-purple-100 text-purple-800"
-                                                    : member.role === "Admin"
-                                                        ? "bg-blue-100 text-blue-800"
-                                                        : "bg-green-100 text-green-800"
+                                                ? "bg-purple-100 text-purple-800"
+                                                : member.role === "Admin"
+                                                    ? "bg-blue-100 text-blue-800"
+                                                    : "bg-green-100 text-green-800"
                                                 }`}
                                         >
                                             {member.role}

@@ -4,12 +4,12 @@ import { SignUp } from '@/pages/auth/signUp'
 import { Home } from '@/pages/home'
 import { Profile } from '@/pages/profile'
 import { UserTasks } from '@/pages/user-tasks'
-import { Tasks } from '@/pages/projects/[id]/tasks'
-import { Members } from '@/pages/projects/[id]/members'
-import { Dashboard } from '@/pages/projects/[id]/dashboard'
+import { Tasks } from '@/pages/projects/tasks'
+import { Members } from '@/pages/projects/members'
+import { Dashboard } from '@/pages/projects/dashboard'
 import { Projects } from "@/pages/projects"
-import { ProjectSidebar } from "@/components/projectSidebar"
 import { HomeLayout } from "@/components/layouts/homeLayout"
+import { ProjectLayout } from "@/components/layouts/projectLayout"
 
 export default function AppRoutes() {
   return (
@@ -24,8 +24,8 @@ export default function AppRoutes() {
           <Route path='/minhas_atividades' element={<UserTasks />} />
           <Route path='/projetos' element={<Projects />} />
         </Route>
-        <Route element={<ProjectSidebar />}>
-          <Route path="/atividades/:id" element={<Tasks />} />
+        <Route element={<ProjectLayout />}>
+          <Route path="/atividades" element={<Tasks />} />
           <Route path="/membros" element={<Members />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>

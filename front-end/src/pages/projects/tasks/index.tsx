@@ -1,4 +1,4 @@
-import { TasksView } from "./tasksView";
+import TasksView from "./tasksView";
 
 export function Tasks() {
     return (

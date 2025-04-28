@@ -6,12 +6,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ProjectModal } from "./project-modal"
+import { Link } from "react-router"
 
 export default function ProjectsView() {
     const [isProjectModalOpen, setIsProjectModalOpen] = useState(false)
 
     const projects = [
         {
+            id: 1,
             name: "Design System",
             description: "Biblioteca de componentes UI para padronização de interfaces",
             progress: 75,
@@ -22,6 +24,7 @@ export default function ProjectsView() {
             status: "Em progresso",
         },
         {
+            id: 2,
             name: "App Mobile",
             description: "Aplicativo para iOS e Android com funcionalidades de gerenciamento de tarefas",
             progress: 45,
@@ -32,6 +35,7 @@ export default function ProjectsView() {
             status: "Em progresso",
         },
         {
+            id: 3,
             name: "Website",
             description: "Site institucional com blog e área de clientes",
             progress: 90,
@@ -42,6 +46,7 @@ export default function ProjectsView() {
             status: "Em revisão",
         },
         {
+            id: 4,
             name: "API REST",
             description: "Desenvolvimento de API para integração com sistemas externos",
             progress: 60,
@@ -52,6 +57,7 @@ export default function ProjectsView() {
             status: "Em progresso",
         },
         {
+            id: 5,
             name: "Dashboard Analytics",
             description: "Painel de métricas e análise de dados para tomada de decisão",
             progress: 30,
@@ -62,6 +68,7 @@ export default function ProjectsView() {
             status: "Em progresso",
         },
         {
+            id: 6,
             name: "Documentação Técnica",
             description: "Criação de documentação técnica para desenvolvedores",
             progress: 100,
@@ -143,11 +150,13 @@ export default function ProjectsView() {
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="text-sm text-gray-500">{project.tasks} tarefas</span>
-                                        <Button
-                                            className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-sm hover:bg-blue-100"
-                                        >
-                                            Acessar
-                                        </Button>
+                                        <Link to="/atividades">
+                                            <Button
+                                                className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-sm hover:bg-blue-100"
+                                            >
+                                                Acessar
+                                            </Button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

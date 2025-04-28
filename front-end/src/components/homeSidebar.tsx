@@ -33,10 +33,10 @@ export function HomeSidebar() {
         <Sidebar collapsible="icon">
             <SidebarHeader className="bg-background flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <img src="@/assets/logo.svg" alt="logo" />
+                    <img src="../../public/logo.svg" alt="logo" />
 
                     <p className="text-xl transition-all duration-200">
-                        Kanbam <span className="font-bold text-xl">Flow</span>
+                        Kanbam <span className="font-bold text-xl text-[#F15637]">Flow</span>
                     </p>
                 </div>
             </SidebarHeader>

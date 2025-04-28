@@ -1,5 +1,4 @@
-
-export default function DashboardView({ params }) {
+export function DashboardView({ params }) {
     const projectId = params.id
 
     return (

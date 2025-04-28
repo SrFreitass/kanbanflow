@@ -214,7 +214,7 @@ export function ProjectModalView({
       onOpenChange={toggle}
     >
       <ModalContent className="flex flex-col gap-5 mb-4">
-        <ModalTitle>Cadastrar Categoria</ModalTitle>
+        <ModalTitle>Novo Projeto</ModalTitle>
         <Form {...form}>
           <form
             className="mt-2 lg:mt-4"
