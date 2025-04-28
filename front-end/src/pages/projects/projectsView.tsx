@@ -4,7 +4,8 @@ import { useState } from "react"
 import { Icons } from "@/components/icons"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { ProjectModal } from "@/components/project-modal"
+import { Button } from "@/components/ui/button"
+import { ProjectModal } from "./project-modal"
 
 export default function ProjectsView() {
     const [isProjectModalOpen, setIsProjectModalOpen] = useState(false)
@@ -77,13 +78,13 @@ export default function ProjectsView() {
             <main className="flex-1 p-6 overflow-auto">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold">Meus Projetos</h1>
-                    <button
+                    <Button
                         onClick={() => setIsProjectModalOpen(true)}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-md flex items-center gap-2 hover:bg-blue-700"
+                        className="text-white rounded-md flex items-center gap-2 hover:bg-blue-700"
                     >
                         <Icons.plus className="h-4 w-4" />
                         Novo Projeto
-                    </button>
+                    </Button>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -93,9 +94,7 @@ export default function ProjectsView() {
                                 <div className="flex justify-between items-start">
                                     <h2 className="text-lg font-semibold">{project.name}</h2>
                                     <Badge
-                                        variant={
-                                            project.status === "Concluído" ? "success" : project.status === "Em revisão" ? "warning" : "info"
-                                        }
+                                        variant="outline"
                                     >
                                         {project.status}
                                     </Badge>
@@ -110,14 +109,14 @@ export default function ProjectsView() {
                                 <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
                                     <div
                                         className={`h-2 rounded-full ${project.progress === 100
-                                                ? "bg-green-500"
-                                                : project.progress > 75
-                                                    ? "bg-blue-600"
-                                                    : project.progress > 50
-                                                        ? "bg-blue-500"
-                                                        : project.progress > 25
-                                                            ? "bg-yellow-500"
-                                                            : "bg-red-500"
+                                            ? "bg-green-500"
+                                            : project.progress > 75
+                                                ? "bg-blue-600"
+                                                : project.progress > 50
+                                                    ? "bg-blue-500"
+                                                    : project.progress > 25
+                                                        ? "bg-yellow-500"
+                                                        : "bg-red-500"
                                             }`}
                                         style={{ width: `${project.progress}%` }}
                                     ></div>
@@ -148,14 +147,13 @@ export default function ProjectsView() {
                                             </div>
                                         )}
                                     </div>
-                                    <div className="flex gap-2">
+                                    <div className="flex items-center gap-2">
                                         <span className="text-sm text-gray-500">{project.tasks} tarefas</span>
-                                        <a
-                                            href={`/projects/${index + 1}`}
+                                        <Button
                                             className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-sm hover:bg-blue-100"
                                         >
                                             Acessar
-                                        </a>
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +161,7 @@ export default function ProjectsView() {
                     ))}
                 </div>
 
-                <ProjectModal isOpen={isProjectModalOpen} onClose={() => setIsProjectModalOpen(false)} />
+                <ProjectModal />
             </main>
         </div>
     )
