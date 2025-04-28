@@ -208,7 +208,7 @@ export function ProjectModalView({
   return (
     <Modal
       triggerClassName="h-[45px] w-[180px]"
-      label="Cadastrar"
+      label="Novo Projeto"
       description="Novo Projeto"
       open={open}
       onOpenChange={toggle}

@@ -78,13 +78,7 @@ export default function ProjectsView() {
             <main className="flex-1 p-6 overflow-auto">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold">Meus Projetos</h1>
-                    <Button
-                        onClick={() => setIsProjectModalOpen(true)}
-                        className="text-white rounded-md flex items-center gap-2 hover:bg-blue-700"
-                    >
-                        <Icons.plus className="h-4 w-4" />
-                        Novo Projeto
-                    </Button>
+                    <ProjectModal />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -160,8 +154,6 @@ export default function ProjectsView() {
                         </div>
                     ))}
                 </div>
-
-                <ProjectModal />
             </main>
         </div>
     )
