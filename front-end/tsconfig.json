@@ -24,6 +24,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "front-end/electron"],
+  "include": ["src", "front-end/electron", "components/ui", "components/ui/button.tsx", "components/ui/input.tsx", "components/ui/label.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

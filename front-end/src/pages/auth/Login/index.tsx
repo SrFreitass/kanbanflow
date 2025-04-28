@@ -1,4 +1,4 @@
-import { LoginView } from "./LoginView";
+import { LoginView } from "./loginView";
 
 export function Login() {
     return (

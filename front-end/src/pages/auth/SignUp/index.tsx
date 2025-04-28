@@ -1,4 +1,4 @@
-import { SignUpView } from "./SignUpView";
+import { SignUpView } from "./signUpView";
 
 export function SignUp() {
     return (

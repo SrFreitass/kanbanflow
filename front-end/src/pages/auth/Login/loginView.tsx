@@ -17,11 +17,13 @@ export function LoginView() {
             </div>
 
             <div className="flex flex-col gap-5">
-                <Input label="Email" placeholder="Digite seu e-mail" type="email"/>
-                <Input label="Senha" placeholder="Digite sua senha" type="password"/>
+                <Input label="Email" placeholder="Digite seu e-mail" type="email" />
+                <Input label="Senha" placeholder="Digite sua senha" type="password" />
             </div>
             <div>
-                <Button size="lg" className="w-full">Entrar</Button>
+                <Link to="/inicio" className="w-full">
+                    <Button size="lg" className="w-full">Entrar</Button>
+                </Link>
                 <p className="text-start mt-2">Não tem uma conta?
                     <Link to="/cadastro" className="ml-2">Criar uma conta</Link>
                 </p>
