@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
-import { useSignUpModel } from "./SignUpModel";
+import { Link } from "react-router";
+import { useSignUpModel } from "./signUpModel";
 
 export function SignUpView() {
     const { form, isLoading, onSubmit } = useSignUpModel()
@@ -31,7 +31,7 @@ export function SignUpView() {
             </form>
 
             <p className="text-start mt-2">Já tem uma conta?
-                <Link to="/entrar" className="ml-2">Entrar</Link>
+                <Link to="/" className="ml-2">Entrar</Link>
             </p>
         </div>
     )
