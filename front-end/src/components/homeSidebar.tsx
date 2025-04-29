@@ -32,9 +32,9 @@ export function HomeSidebar() {
     ]
 
     return (
-        <Sidebar collapsible="icon" >
+        <Sidebar collapsible="icon">
             <SidebarHeader className="bg-background flex items-center overflow-hidden">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-start gap-2">
                     <img src="/logo.svg" alt="logo" />
                     {state === "expanded" && (
                         <p className="text-xl transition-all duration-200">

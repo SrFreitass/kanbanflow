@@ -8,7 +8,7 @@ export function HomeLayout() {
     >
       <div className="flex w-screen h-screen overflow-hidden">
         <HomeSidebar />
-        <main className="flex-1 relative overflow-auto">
+        <main className="flex-1 relative">
           <SidebarTrigger />
           <Outlet />
         </main>
