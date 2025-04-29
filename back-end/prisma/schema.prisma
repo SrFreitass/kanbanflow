@@ -60,7 +60,7 @@ model users {
   permission    permission_type @default(user)
   comments      comments[]
   members       members[]
-  refresh_token refresh_token?
+  refresh_tokens refresh_tokens?
 }
 
 model tasks {
@@ -78,7 +78,7 @@ model tasks {
   comments    comments?      @relation(fields: [comment_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_comment_id")
 }
 
-model refresh_token {
+model refresh_tokens {
   id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   user_id String? @unique @db.Uuid
   token   String
