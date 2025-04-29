@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
 
@@ -21,6 +20,8 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        outline_destructive:
+          "border border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-white dark:hover:bg-destructive/90"
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -50,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <>
         {loading ? (
           <Comp
-            className={cn(buttonVariants({ variant, size, className }))}
+            className={cn(buttonVariants({ variant, size }), className)}
             disabled
             ref={ref}
             {...props}
@@ -59,7 +60,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           </Comp>
         ) : (
           <Comp
-            className={cn(buttonVariants({ variant, size, className }))}
+            className={cn(buttonVariants({ variant, size }), className)}
             ref={ref}
             {...props}
           />

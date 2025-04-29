@@ -1,13 +1,15 @@
 import { Outlet } from "react-router"
-import { SidebarProvider } from "../ui/sidebar"
+import { SidebarProvider, SidebarTrigger } from "../ui/sidebar"
 import { HomeSidebar } from "../homeSidebar"
 
 export function HomeLayout() {
   return (
-    <SidebarProvider>
+    <SidebarProvider
+    >
       <div className="flex w-screen h-screen overflow-hidden">
         <HomeSidebar />
         <main className="flex-1 relative overflow-auto">
+          <SidebarTrigger />
           <Outlet />
         </main>
       </div>

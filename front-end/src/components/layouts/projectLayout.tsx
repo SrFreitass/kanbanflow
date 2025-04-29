@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router'
-import { SidebarProvider } from '../ui/sidebar'
+import { SidebarProvider, SidebarTrigger } from '../ui/sidebar'
 import { ProjectSidebar } from '../projectSidebar'
 
 export function ProjectLayout() {
@@ -8,6 +8,7 @@ export function ProjectLayout() {
             <div className='flex w-screen h-screen overflow-hidden'>
                 <ProjectSidebar />
                 <main className="w-screen h-screen relative overflow-hidden">
+                    <SidebarTrigger />
                     <Outlet />
                 </main>
             </div>

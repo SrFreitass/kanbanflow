@@ -19,7 +19,7 @@ export function ProfileView() {
                             <Button size="lg">
                                 Adicionar foto
                             </Button>
-                            <Button variant="destructive" className="ml-2" size="lg">
+                            <Button variant="outline_destructive" className="ml-2" size="lg">
                                 Remover foto
                             </Button>
                         </div>
@@ -72,8 +72,8 @@ export function ProfileView() {
                         </div>
 
                         <div className="flex justify-end gap-3">
-                            <Button className=" hover:bg-gray-50" variant="destructive" size="lg">Cancelar</Button>
-                            <Button className=" text-white rounded-md hover:bg-blue-700">
+                            <Button variant="outline_destructive" size="lg">Cancelar</Button>
+                            <Button size="lg">
                                 Salvar alterações
                             </Button>
                         </div>

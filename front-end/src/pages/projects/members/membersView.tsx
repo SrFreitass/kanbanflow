@@ -54,24 +54,6 @@ export function MembersView() {
                                     </svg>
                                     Filtrar
                                 </button>
-                                <button className="px-3 py-1.5 border bg-white rounded-md text-sm flex items-center gap-1">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path d="M3 6h18"></path>
-                                        <path d="M7 12h10"></path>
-                                        <path d="M10 18h4"></path>
-                                    </svg>
-                                    Ordenar
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -84,7 +66,7 @@ export function MembersView() {
                                 <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Acesso</th>
                                 <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Adicionado em</th>
                                 <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                                <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
+                                <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Ações</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-200">
@@ -178,8 +160,8 @@ export function MembersView() {
                                             {member.status}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <div className="flex gap-2 justify-end">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <div className="flex gap-2 justify-center ">
                                             <button className="text-blue-600 hover:text-blue-900">Editar</button>
                                             <button className="text-red-600 hover:text-red-900">Remover</button>
                                         </div>
