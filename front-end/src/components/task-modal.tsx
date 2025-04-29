@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Icons } from "./icons"
+import { X } from "lucide-react"
 
 export function TaskModal({ isOpen, onClose, task = null }) {
   const isNewTask = !task
@@ -43,7 +43,7 @@ export function TaskModal({ isOpen, onClose, task = null }) {
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-xl font-semibold">{isNewTask ? "Nova Tarefa" : "Detalhes da Tarefa"}</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
-            <Icons.x className="h-5 w-5" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
