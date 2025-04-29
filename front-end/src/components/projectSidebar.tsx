@@ -35,7 +35,7 @@ export function ProjectSidebar() {
         <Sidebar collapsible="icon">
             <SidebarHeader className="bg-background flex items-center overflow-hidden">
                 <div className="flex items-center gap-2">
-                    <img src="/logo.svg" alt="logo" />
+                    <img src="/logo.svg" alt="logo" className="scale-[85%]" />
                     {state === "expanded" && (
                         <p className="text-xl transition-all duration-200">
                             Kanbam<span className="font-bold text-xl text-[#F15637]">Flow</span>
@@ -59,8 +59,8 @@ export function ProjectSidebar() {
                                         onClick={() => navigate(item.url)}
                                         className="text-muted-foreground mt-4"
                                     >
-                                        <Icon style={{ width: "auto", height: 30 }} />
-                                        <span>{item.title}</span>
+                                        <Icon style={{ width: "auto", height: state === "collapsed" ? 22 : 24 }} />
+                                        {state === "expanded" && <span>{item.title}</span>}
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             )

@@ -1,6 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Switch } from "@/components/ui/switch"
-import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 
 export function ProfileView() {

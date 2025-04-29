@@ -1,21 +1,19 @@
 "use client"
 
 import { useState } from "react"
-import { Icons } from "@/components/icons"
 import { Badge } from "@/components/ui/badge"
-import { ArrowDown, ArrowUp, BarChart2, Bell, Search } from "lucide-react"
+import { ArrowDown, ArrowUp, BarChart2, Bell, Briefcase, CheckSquare, Clock, Search } from "lucide-react"
 
 export default function HomeView() {
     const [selectedPeriod, setSelectedPeriod] = useState("month")
 
-    // Dados de exemplo para estatísticas
     const stats = [
         {
             title: "Projetos Ativos",
             value: "8",
             change: "+2",
             changeType: "increase",
-            icon: <Icons.briefcase className="h-6 w-6 text-blue-600" />,
+            icon: <Briefcase className="h-6 w-6 text-blue-600" />,
             color: "bg-blue-50",
         },
         {
@@ -23,7 +21,7 @@ export default function HomeView() {
             value: "7",
             change: "-5",
             changeType: "decrease",
-            icon: <Icons.task className="h-6 w-6 text-yellow-600" />,
+            icon: <CheckSquare className="h-6 w-6 text-yellow-600" />,
             color: "bg-yellow-50",
         },
         {
@@ -31,7 +29,7 @@ export default function HomeView() {
             value: "1",
             change: "+12",
             changeType: "increase",
-            icon: <Icons.task className="h-6 w-6 text-green-600" />,
+            icon: <CheckSquare className="h-6 w-6 text-green-600" />,
             color: "bg-green-50",
         },
         {
@@ -39,7 +37,7 @@ export default function HomeView() {
             value: "40",
             change: "+28",
             changeType: "increase",
-            icon: <Icons.clock className="h-6 w-6 text-purple-600" />,
+            icon: <Clock className="h-6 w-6 text-purple-600" />,
             color: "bg-purple-50",
         },
     ]
