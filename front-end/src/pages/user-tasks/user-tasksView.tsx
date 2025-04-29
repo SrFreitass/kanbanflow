@@ -25,24 +25,7 @@ export function UserTasksView() {
                             </svg>
                             Filtrar
                         </button>
-                        <button className="px-3 py-1.5 border bg-white rounded-md text-sm flex items-center gap-1">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <path d="M3 6h18"></path>
-                                <path d="M7 12h10"></path>
-                                <path d="M10 18h4"></path>
-                            </svg>
-                            Agrupar
-                        </button>
+                        
                     </div>
                 </div>
 
