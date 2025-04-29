@@ -1,14 +1,16 @@
+import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router'
-import App from './App.tsx'
+import AppRoutes from './routes/routes.tsx'
 import './index.css'
+import { QueryClientProvider } from '@tanstack/react-query'
+import queryClient from './services/queryClient.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<App/>} />
-    </Routes>
-  </BrowserRouter>
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <AppRoutes />
+    </QueryClientProvider>
+  </React.StrictMode>
 )
 
 // Use contextBridge

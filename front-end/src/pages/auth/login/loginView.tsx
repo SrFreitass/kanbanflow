@@ -1,0 +1,33 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Link } from "react-router";
+
+export function LoginView() {
+    return (
+        <div className="flex flex-col gap-6">
+            <div className="flex flex-col w-96 gap-3">
+                <div className="flex gap-3 justify-center">
+                    <img src="/src/assets/logo.svg" alt="logo" className="w-12 h-12" />
+                    <h1 className="font-bold">
+                        <span className="dark:text-white">Kanban</span>
+                        <span className="text-[#F15637]">Flow</span>
+                    </h1>
+                </div>
+                <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu dictum mauris.</p>
+            </div>
+
+            <div className="flex flex-col gap-5">
+                <Input label="Email" placeholder="Digite seu e-mail" type="email" />
+                <Input label="Senha" placeholder="Digite sua senha" type="password" />
+            </div>
+            <div>
+                <Link to="/inicio" className="w-full">
+                    <Button size="lg" className="w-full">Entrar</Button>
+                </Link>
+                <p className="text-start mt-2">Não tem uma conta?
+                    <Link to="/cadastro" className="ml-2">Criar uma conta</Link>
+                </p>
+            </div>
+        </div>
+    )
+}
