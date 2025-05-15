@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export function ProfileView() {
     return (
-        <div className="flex h-screen bg-gray-50">
+        <div className="flex h-screen items-center justify-center bg-gray-50">
             <main className="flex-1 p-6 overflow-auto">
                 <h1 className="text-2xl font-bold mb-6">Perfil do Usuário</h1>
 
@@ -16,10 +16,10 @@ export function ProfileView() {
                             <AvatarFallback>JD</AvatarFallback>
                         </Avatar>
                         <div>
-                            <Button size="lg">
+                            <Button size="lg" className="bg-[#F15637]" variant="destructive">
                                 Adicionar foto
                             </Button>
-                            <Button variant="destructive" className="ml-2" size="lg">
+                            <Button  className="ml-2" size="lg">
                                 Remover foto
                             </Button>
                         </div>
@@ -34,7 +34,7 @@ export function ProfileView() {
                                     defaultValue="João Silva"
                                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     disabled
-                                />
+                                    />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
@@ -42,7 +42,7 @@ export function ProfileView() {
                                     type="email"
                                     defaultValue="joao@exemplo.com"
                                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                />
+                                    />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
@@ -50,30 +50,30 @@ export function ProfileView() {
                                     type="tel"
                                     defaultValue="(11) 98765-4321"
                                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                />
+                                    />
                             </div>
                         </div>
 
                         <div className="border-t pt-6">
                             <h3 className="text-lg font-medium mb-4">Segurança</h3>
-                            <div className="flex justify-center items-center gap-6">
-                                <div>
+                            <div className="flex-row justify-center items-center gap-6">
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Senha atual</label>
+                                <div className="flex gap-2">
                                     <input
                                         type="password"
                                         placeholder="••••••••"
                                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    />
-                                </div>
+                                        />
                                 <Button className="" size="lg">
                                     Redefinir senha
                                 </Button>
+                                        </div>
                             </div>
                         </div>
 
                         <div className="flex justify-end gap-3">
-                            <Button className=" hover:bg-gray-50" variant="destructive" size="lg">Cancelar</Button>
-                            <Button className=" text-white rounded-md hover:bg-blue-700">
+                            <Button variant="destructive" size="lg">Cancelar</Button>
+                            <Button className="bg-[#F15637] text-white rounded-md " variant="destructive" size="lg">
                                 Salvar alterações
                             </Button>
                         </div>
