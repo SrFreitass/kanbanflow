@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
+import { AddMember } from "./@components/addMember";
 
 export function MembersView() {
     // const projectId = params.id
@@ -12,13 +13,7 @@ export function MembersView() {
                         <h1 className="text-2xl font-bold">Membros do Projeto</h1>
                         <p className="text-gray-500">Gerencie os membros e suas permissões</p>
                     </div>
-                    <Button 
-                    className=" text-white rounded-md flex items-center gap-2 hover:bg-blue-700"
-                    size="lg"
-                    >
-                        <Plus className="w-4 h-4" />
-                        Adicionar Membro
-                    </Button>
+                    <AddMember />
                 </div>
 
                 <div className="bg-white rounded-lg shadow-sm border overflow-hidden">

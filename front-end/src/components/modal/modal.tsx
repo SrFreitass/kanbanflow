@@ -36,12 +36,12 @@ export function ModalButtons({ children, ...rest }: Omit<ButtonProps, 'size'>) {
     return (
         <div className="flex gap-2 w-full">
             <DialogClose asChild>
-                <Button variant="outline" size="lg" className="w-full">
+                <Button variant="outline" size="lg" className="flex-1">
                     Cancelar
                 </Button>
             </DialogClose>
 
-            <Button {...rest} size="lg" className="w-full">
+            <Button {...rest} size="lg" className="flex-1">
                 {children}
             </Button>
         </div>

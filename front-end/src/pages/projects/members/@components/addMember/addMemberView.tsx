@@ -8,16 +8,15 @@ import {
   ModalTitle,
 } from '@/components/modal/modal'
 import { Form } from '@/components/ui/form'
-import { ProjectModalModel } from './project-modalModel'
-import { FormDateTimePicker } from '@/components/form/formDateTimePicker'
-import { FormTextArea } from '@/components/form/formTextArea'
+import { AddMemberModel } from './addMemberModel'
+import { FormSelect } from '@/components/form/formSelect'
 
-export function ProjectModalView({
+export function AddMemberView({
   form,
   handleConfirmationData,
   toggle,
   open,
-}: ReturnType<typeof ProjectModalModel>) {
+}: ReturnType<typeof AddMemberModel>) {
   return (
     <Modal
       triggerClassName="h-[45px] w-[180px]"
@@ -27,7 +26,7 @@ export function ProjectModalView({
       onOpenChange={toggle}
     >
       <ModalContent className="flex flex-col gap-5 mb-4 w-full">
-        <ModalTitle>Novo Projeto</ModalTitle>
+        <ModalTitle>Novo Membro</ModalTitle>
         <Form {...form}>
           <form
             className="mt-2 lg:mt-4"
@@ -40,21 +39,16 @@ export function ProjectModalView({
                 label="Nome"
                 required
               />
-              <FormTextArea
+              <FormInput
+                name="role"
                 control={form.control}
-                name="description"
-                label="Descrição"
-              />
-              <FormDateTimePicker
-                control={form.control}
-                name="startDate"
-                label="Data de Início"
+                label="Cargo"
                 required
               />
-              <FormDateTimePicker
+              <FormInput
+                name="status"
                 control={form.control}
-                name="dueDate"
-                label="Data de Término"
+                label="Status"
                 required
               />
             </div>
