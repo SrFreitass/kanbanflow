@@ -1,11 +1,12 @@
+import { Heading } from "@/components/heading/heading";
 
 export function UserTasksView() {
     return (
-        <div className="flex h-screen bg-gray-50">
-            <main className="flex-1 p-6 overflow-auto">
+        <div className="flex h-screen p-6 bg-gray-50">
+            <main className="flex-1 pb-6 overflow-auto">
                 <div className="flex justify-between items-center mb-6">
                     <div>
-                        <h1 className="text-2xl font-bold">Minhas Atividades</h1>
+                        <Heading size="lg">Minhas Atividades</Heading>
                         <p className="text-gray-500">Visualize todas as suas atividades em diferentes projetos</p>
                     </div>
                     <div className="flex gap-2">

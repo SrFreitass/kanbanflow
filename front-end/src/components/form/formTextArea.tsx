@@ -1,12 +1,19 @@
+import type { ComponentProps } from 'react'
 import type { Control, FieldPath, FieldValues } from 'react-hook-form'
+import {
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from '../ui/form'
+import { Textarea } from '../ui/textarea'
 
-import { Input, type InputProps } from '../ui/input'
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
-
-interface FormInputProps<
+interface FormTextAreaProps<
     TFieldValues extends FieldValues = FieldValues,
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> extends InputProps {
+> extends ComponentProps<'textarea'> {
     control: Control<TFieldValues>
     name: TName
     description?: string
@@ -14,7 +21,7 @@ interface FormInputProps<
     required?: boolean
 }
 
-export function FormInput<
+export function FormTextArea<
     TFieldValues extends FieldValues = FieldValues,
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
@@ -24,7 +31,7 @@ export function FormInput<
     required,
     description,
     ...inputProps
-}: FormInputProps<TFieldValues, TName>) {
+}: FormTextAreaProps<TFieldValues, TName>) {
     return (
         <FormField
             control={control}
@@ -40,10 +47,9 @@ export function FormInput<
                         </div>
                     )}
                     <FormControl>
-                        <Input
+                        <Textarea
                             value={field.value || ''}
                             onChange={field.onChange}
-                            className='w-full h-12'
                             {...inputProps}
                         />
                     </FormControl>

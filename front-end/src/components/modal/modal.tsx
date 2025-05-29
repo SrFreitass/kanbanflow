@@ -9,6 +9,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from '../ui/dialog'
+import { Plus } from 'lucide-react'
 
 type ButtonVariant = ButtonProps['variant']
 
@@ -18,7 +19,7 @@ export function ModalTitle({
 }: { children: string; variant?: 'primary' | 'destructive' }) {
     return (
         <DialogTitle>
-            <Heading align={'center'} variant={variant}>
+            <Heading align={'center'} variant={variant} size="lg">
                 {children}
             </Heading>
         </DialogTitle>
@@ -36,12 +37,12 @@ export function ModalButtons({ children, ...rest }: Omit<ButtonProps, 'size'>) {
     return (
         <div className="flex gap-2 w-full">
             <DialogClose asChild>
-                <Button variant="outline" size="lg" className="w-full">
+                <Button variant="outline" size="lg" className="flex-1">
                     Cancelar
                 </Button>
             </DialogClose>
 
-            <Button {...rest} size="lg" className="w-full">
+            <Button {...rest} size="lg" className="flex-1">
                 {children}
             </Button>
         </div>
@@ -55,6 +56,7 @@ type ModalProps = DialogProps & {
     variant?: ButtonVariant
     triggerClassName?: string
     triggerDisable?: boolean
+    icon?: boolean
 }
 
 export function Modal({
@@ -64,6 +66,7 @@ export function Modal({
     description,
     triggerClassName,
     triggerDisable = false,
+    icon,
     ...rest
 }: ModalProps) {
     return (
@@ -75,6 +78,9 @@ export function Modal({
                         className={triggerClassName}
                         disabled={triggerDisable}
                     >
+                        {icon && (
+                            <Plus color='white' />
+                        )}
                         {label}
                     </Button>
                 </DialogTrigger>

@@ -1,18 +1,17 @@
 import { useToggle } from '@/hooks/useToggle'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { projectFormSchema, ProjectFormValues } from '../projectsSchema'
+import { MembersFormSchema, MembersFormValues } from '../../membersSchema'
 
-export function ProjectModalModel() {
+export function AddMembersModel() {
   const [open, toggle] = useToggle(false)
 
-  const form = useForm<ProjectFormValues>({
-    resolver: zodResolver(projectFormSchema),
+  const form = useForm<MembersFormValues>({
+    resolver: zodResolver(MembersFormSchema),
     defaultValues: {
       name: '',
-      description: '',
-      startDate: undefined,
-      dueDate: undefined,
+      role: '',
+      status: '',
     },
   })
 
