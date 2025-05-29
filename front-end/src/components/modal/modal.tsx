@@ -19,7 +19,7 @@ export function ModalTitle({
 }: { children: string; variant?: 'primary' | 'destructive' }) {
     return (
         <DialogTitle>
-            <Heading align={'center'} variant={variant}>
+            <Heading align={'center'} variant={variant} size="lg">
                 {children}
             </Heading>
         </DialogTitle>

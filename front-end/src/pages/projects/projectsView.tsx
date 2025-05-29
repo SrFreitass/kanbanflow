@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ProjectModal } from "./project-modal"
 import { Link } from "react-router"
+import { Heading } from "@/components/heading/heading"
 
 export default function ProjectsView() {
     const [isProjectModalOpen, setIsProjectModalOpen] = useState(false)
@@ -80,10 +81,10 @@ export default function ProjectsView() {
     ]
 
     return (
-        <div className="flex h-screen bg-gray-50">
-            <main className="flex-1 p-6 overflow-auto">
+        <div className="flex h-screen p-6 bg-gray-50">
+            <main className="flex-1 pb-6 overflow-auto">
                 <div className="flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-bold">Meus Projetos</h1>
+                    <Heading size="lg">Meus Projetos</Heading>
                     <ProjectModal />
                 </div>
 

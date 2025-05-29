@@ -20,8 +20,8 @@ export function AddMembersView({
   return (
     <Modal
       triggerClassName="h-[45px] w-[180px]"
-      label="Novo Projeto"
-      description="Novo Projeto"
+      label="Novo Membro"
+      description="Novo Membro"
       open={open}
       onOpenChange={toggle}
       icon

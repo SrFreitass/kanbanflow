@@ -1,4 +1,4 @@
-import { ClipboardCheck, User, FolderClosed } from "lucide-react"
+import { ClipboardCheck, User, FolderClosed, ChartColumn } from "lucide-react"
 import { Sidebar, SidebarContent, SidebarGroup, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator, useSidebar } from "./ui/sidebar"
 import { useNavigate } from "react-router"
 import React from "react"
@@ -14,6 +14,11 @@ export function HomeSidebar() {
     const { state } = useSidebar()
 
     const MENU_ITEMS: MenuItems = [
+        {
+            title: 'Dashboard',
+            icon: ChartColumn,
+            url: '/inicio'
+        },
         {
             title: 'Minhas Atividades',
             icon: ClipboardCheck,

@@ -3,9 +3,9 @@ import { type VariantProps, cva } from 'class-variance-authority'
 const headingVariants = cva('text-foreground font-bold flex flex-col', {
   variants: {
     size: {
-      default: 'text-xl',
-      sm: 'text-2xl',
-      lg: 'text-3xl',
+      default: 'text-2xl',
+      sm: 'text-lg',
+      lg: 'text-4xl',
     },
     align: {
       left: 'text-left',

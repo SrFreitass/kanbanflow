@@ -23,13 +23,13 @@ export function AddTasksView({
         <Modal
             triggerClassName="h-[45px] w-[180px]"
             label="Nova Tarefa"
-            description="Novo Projeto"
+            description="Nova Tarefa"
             open={open}
             onOpenChange={toggle}
             icon
         >
             <ModalContent className="flex flex-col gap-5 mb-4 w-full">
-                <ModalTitle>Novo Membro</ModalTitle>
+                <ModalTitle>Nova Tarefa</ModalTitle>
                 <Form {...form}>
                     <form
                         className="mt-2 lg:mt-4"
