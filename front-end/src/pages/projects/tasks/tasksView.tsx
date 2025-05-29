@@ -1,25 +1,9 @@
 "use client"
 
-import { useState } from "react"
-import { TaskModal } from "@/components/task-modal"
-import { ProjectSidebar } from "@/components/projectSidebar"
-import { Plus } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { AddTasks } from "./@components/addTasks"
 
 export default function TasksView() {
     //   const projectId = params.id
-    const [isTaskModalOpen, setIsTaskModalOpen] = useState(false)
-    const [isViewTaskModalOpen, setIsViewTaskModalOpen] = useState(false)
-    const [selectedTask, setSelectedTask] = useState(null)
-
-    const openTaskModal = (task = null) => {
-        setSelectedTask(task)
-        if (task) {
-            setIsViewTaskModalOpen(true)
-        } else {
-            setIsTaskModalOpen(true)
-        }
-    }
 
     type Task = {
         id: number
@@ -163,15 +147,7 @@ export default function TasksView() {
         <div className="flex flex-col h-screen bg-gray-50">
             <div className="flex justify-between items-center p-6">
                 <h1 className="text-2xl font-bold">Tarefas</h1>
-                <div className="flex gap-2">
-                    <Button
-                        onClick={() => openTaskModal()}
-                        className=" text-white rounded-md flex items-center gap-1"
-                        size="lg"
-                    ><Plus className="w-4 h-4" />
-                        Nova Tarefa
-                    </Button>
-                </div>
+                <AddTasks />
             </div>
 
             <div className="p-4">
@@ -206,7 +182,6 @@ export default function TasksView() {
                                     <div
                                         key={taskIndex}
                                         className="bg-white p-3 rounded-lg shadow-sm border cursor-pointer hover:shadow-md transition-shadow"
-                                        onClick={() => openTaskModal()}
                                     >
                                         <div className="flex justify-between items-start mb-2">
                                             <span
@@ -279,12 +254,6 @@ export default function TasksView() {
                     ))}
                 </div>
             </div>
-
-            {/* Modal para criar nova tarefa */}
-            <TaskModal isOpen={isTaskModalOpen} onClose={() => setIsTaskModalOpen(false)} />
-
-            {/* Modal para visualizar/editar tarefa existente */}
-            <TaskModal isOpen={isViewTaskModalOpen} onClose={() => setIsViewTaskModalOpen(false)} task={selectedTask} />
         </div>
     )
 }

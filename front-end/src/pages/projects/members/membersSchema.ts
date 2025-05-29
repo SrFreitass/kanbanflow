@@ -5,6 +5,7 @@ export const MembersFormSchema = z.object({
         .string()
         .min(3, { message: 'O nome deve conter pelo menos 3 caracteres' })
         .nullish(),
+    email: z.string().nullish(),
     role: z.string().nullish(),
     status: z.string(),
     

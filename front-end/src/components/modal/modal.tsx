@@ -9,6 +9,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from '../ui/dialog'
+import { Plus } from 'lucide-react'
 
 type ButtonVariant = ButtonProps['variant']
 
@@ -55,6 +56,7 @@ type ModalProps = DialogProps & {
     variant?: ButtonVariant
     triggerClassName?: string
     triggerDisable?: boolean
+    icon?: boolean
 }
 
 export function Modal({
@@ -64,6 +66,7 @@ export function Modal({
     description,
     triggerClassName,
     triggerDisable = false,
+    icon,
     ...rest
 }: ModalProps) {
     return (
@@ -75,6 +78,9 @@ export function Modal({
                         className={triggerClassName}
                         disabled={triggerDisable}
                     >
+                        {icon && (
+                            <Plus color='white' />
+                        )}
                         {label}
                     </Button>
                 </DialogTrigger>

@@ -8,15 +8,15 @@ import {
   ModalTitle,
 } from '@/components/modal/modal'
 import { Form } from '@/components/ui/form'
-import { AddMemberModel } from './addMemberModel'
-import { FormSelect } from '@/components/form/formSelect'
+import { AddMembersModel } from './addMembersModel'
+// import { FormSelect } from '@/components/form/formSelect'
 
-export function AddMemberView({
+export function AddMembersView({
   form,
   handleConfirmationData,
   toggle,
   open,
-}: ReturnType<typeof AddMemberModel>) {
+}: ReturnType<typeof AddMembersModel>) {
   return (
     <Modal
       triggerClassName="h-[45px] w-[180px]"
@@ -24,6 +24,7 @@ export function AddMemberView({
       description="Novo Projeto"
       open={open}
       onOpenChange={toggle}
+      icon
     >
       <ModalContent className="flex flex-col gap-5 mb-4 w-full">
         <ModalTitle>Novo Membro</ModalTitle>

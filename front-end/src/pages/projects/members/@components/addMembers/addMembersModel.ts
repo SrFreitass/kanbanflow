@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { MembersFormSchema, MembersFormValues } from '../../membersSchema'
 
-export function AddMemberModel() {
+export function AddMembersModel() {
   const [open, toggle] = useToggle(false)
 
   const form = useForm<MembersFormValues>({
